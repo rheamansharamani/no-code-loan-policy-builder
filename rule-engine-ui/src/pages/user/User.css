@@ -1,0 +1,170 @@
+.user-dashboard{
+    background:#f7f9fc;
+    min-height:100vh;
+}
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:70px;
+    background:#EAF4FF;
+}
+
+.hero-left{
+    width:50%;
+}
+
+.hero-left h1{
+    font-size:52px;
+    margin-bottom:20px;
+}
+
+.hero-left p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.apply-btn{
+    background:#FF6B35;
+    color:white;
+    padding:15px 30px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.hero-right{
+    width:35%;
+}
+
+.loan-card{
+    background:white;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.loan-card ul{
+    margin-top:20px;
+    line-height:2;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    padding:50px 70px;
+}
+
+.feature-card{
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.feature-card h2{
+    color:#0D4B87;
+    font-size:36px;
+    margin-bottom:15px;
+}
+
+.apply-container{
+    background:#f7f9fc;
+    min-height:100vh;
+    padding:60px;
+}
+
+.apply-container h1{
+    margin-bottom:30px;
+}
+
+.loan-form{
+    width:700px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.loan-form input{
+    padding:15px;
+    border-radius:10px;
+    border:1px solid #ddd;
+}
+
+.loan-form button{
+    padding:15px;
+    background:#0D4B87;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.result-page{
+    min-height:100vh;
+    background:#f7f9fc;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.success-card,
+.reject-card{
+    width:850px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.success-card h1{
+    color:#28A745;
+    margin-bottom:20px;
+}
+
+.reject-card h1{
+    color:#DC3545;
+    margin-bottom:20px;
+}
+
+.summary{
+    margin:30px 0;
+    line-height:2;
+}
+
+.reject-card table{
+    width:100%;
+    border-collapse:collapse;
+    margin:25px 0;
+}
+
+.reject-card th{
+    background:#0D4B87;
+    color:white;
+    padding:14px;
+}
+
+.reject-card td{
+    border-bottom:1px solid #eee;
+    padding:14px;
+}
+
+.back-btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#FF6B35;
+    color:white;
+    padding:14px 25px;
+    border-radius:10px;
+    text-decoration:none;
+}
