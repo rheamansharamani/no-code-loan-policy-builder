@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Rule Builder</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero-card">
+            <div>
+                <p class="eyebrow">Configurable Rule Engine</p>
+                <h1>Visual Rule Builder</h1>
+                <p class="hero-copy">Create business rules through a guided, metadata-driven experience without writing code.</p>
+            </div>
+            <div class="hero-actions">
+                <button type="button" id="saveRuleBtn" class="btn btn-success">Save Rule</button>
+            </div>
+        </header>
+
+        <main class="builder-grid">
+            <section class="panel panel-main">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Rule Definition</p>
+                        <h2>Eligibility Rule</h2>
+                    </div>
+                </div>
+
+                <div class="field-grid">
+                    <div class="field-group">
+                        <label for="productSelect">Loan Product</label>
+                        <select id="productSelect">
+                            <option value="">Select Loan Product</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="ruleName">Rule Name</label>
+                        <input id="ruleName" type="text" placeholder="Enter Rule Name">
+                    </div>
+                </div>
+
+                <div class="mode-row">
+                    <label>Builder Mode</label>
+                    <div class="mode-toggle">
+                        <button id="modeManual" class="btn btn-primary">Manual Rule</button>
+                        <button id="modeAI" class="btn">AI Draft</button>
+                    </div>
+                </div>
+                <p class="mode-hint">Build manually by default. Use AI only to draft a starting rule and review it carefully before applying.</p>
+                <div class="module-boundary">
+                    <strong>Independent module</strong>
+                    <p>This builder only produces a normalized rule payload and dispatches a rule:ready event. It can later plug into Developer 1's API without depending on dashboards, databases, or evaluation services.</p>
+                </div>
+
+                <div id="validationSummary" class="validation-summary" aria-live="polite"></div>
+
+                <div class="section-heading section-heading-spaced">
+                    <div>
+                        <p class="eyebrow">Conditions</p>
+                        <h2>Rule Logic</h2>
+                    </div>
+                    <button type="button" id="addConditionBtn" class="btn btn-primary">+ Add Condition</button>
+                </div>
+
+                <div id="conditionsContainer" class="conditions-panel"></div>
+            </section>
+
+            <aside class="panel panel-side">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">AI Assistant</p>
+                        <h2>Draft with AI</h2>
+                    </div>
+                </div>
+
+                <div id="aiAssistantPanel" class="ai-assistant-panel">
+                    <label for="aiPrompt">Describe the eligibility rule in natural language</label>
+                    <textarea id="aiPrompt" placeholder="Example: Create a Home Loan rule for salaried employees above age 23 with income above 4 lakh and CIBIL above 700."></textarea>
+
+                    <button type="button" id="generateRuleBtn" class="btn btn-primary btn-full">Generate Draft</button>
+                    <p id="generationStatus" class="status-pill info">Ready to generate a draft rule.</p>
+                    <div id="aiReviewActions" class="ai-review-actions" hidden>
+                        <button type="button" id="applyAiRuleBtn" class="btn btn-primary">Apply Draft</button>
+                        <button type="button" id="discardAiRuleBtn" class="btn">Discard</button>
+                    </div>
+                    <p id="aiReviewHint" class="ai-review-hint">AI can suggest a starting rule, but you should review it manually before applying it.</p>
+                    <div id="aiPreview" class="ai-preview"></div>
+                </div>
+
+                <div class="section-heading section-heading-spaced">
+                    <div>
+                        <p class="eyebrow">Integration</p>
+                        <h2>Rule JSON</h2>
+                    </div>
+                </div>
+                <pre id="jsonPreview" class="json-preview"></pre>
+            </aside>
+        </main>
+    </div>
+
+    <script type="module" src="../js/builder.js"></script>
+</body>
+</html>
