@@ -50,6 +50,10 @@
                     </div>
                 </div>
                 <p class="mode-hint">Build manually by default. Use AI only to draft a starting rule and review it carefully before applying.</p>
+                <div class="module-boundary">
+                    <strong>Independent module</strong>
+                    <p>This builder only produces a normalized rule payload and dispatches a rule:ready event. It can later plug into Developer 1's API without depending on dashboards, databases, or evaluation services.</p>
+                </div>
 
                 <div id="validationSummary" class="validation-summary" aria-live="polite"></div>
 

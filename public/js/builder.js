@@ -589,6 +589,26 @@ function updateJSONPreview() {
     dom.jsonPreview.textContent = JSON.stringify(buildRulePayload(), null, 4);
 }
 
+function getBuilderSnapshot() {
+    return buildRulePayload();
+}
+
+function loadRulePayload(rule) {
+    if (!rule) {
+        return;
+    }
+
+    applyGeneratedRule(rule);
+}
+
+if (typeof window !== "undefined") {
+    window.RuleBuilder = {
+        getState: () => ({ ...state }),
+        getPayload: getBuilderSnapshot,
+        loadRule: loadRulePayload
+    };
+}
+
 function restoreSavedRule() {
     const storedRule = localStorage.getItem("loan-rule-builder-latest");
     if (!storedRule) {

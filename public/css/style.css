@@ -211,3 +211,8 @@ grid-template-columns:1fr;
 .preview-card h3{margin:0 0 8px;font-size:1rem}
 .preview-card p{margin:0 0 4px}
 .preview-card .muted{color:#64748b;font-size:0.92rem}
+
+
+.module-boundary{margin:10px 0 14px;padding:12px 14px;border:1px dashed var(--border);border-radius:12px;background:#f8fafc;color:var(--muted)}
+.module-boundary strong{display:block;margin-bottom:6px;color:var(--text)}
+.module-boundary p{margin:0;line-height:1.5}

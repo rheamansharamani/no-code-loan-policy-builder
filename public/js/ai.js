@@ -1,8 +1,13 @@
-const DEFAULT_API_PATH = "/api/ai/generate";
+function getAiEndpoint() {
+    if (typeof window !== "undefined" && window.RULE_BUILDER_CONFIG?.aiEndpoint) {
+        return window.RULE_BUILDER_CONFIG.aiEndpoint;
+    }
+    return "/api/ai/generate";
+}
 
 async function generateRuleFromPrompt(prompt, options = {}) {
     try {
-        const response = await fetch(DEFAULT_API_PATH, {
+        const response = await fetch(getAiEndpoint(), {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
