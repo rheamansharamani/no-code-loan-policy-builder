@@ -99,8 +99,35 @@
                 <pre id="jsonPreview" class="json-preview"></pre>
             </aside>
         </main>
+
+        <main class="builder-grid" style="margin-top:24px;">
+            <section class="panel panel-main">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Saved Rules</p>
+                        <h2>Rule Library</h2>
+                    </div>
+                </div>
+                <div id="ruleLibraryList"></div>
+            </section>
+
+            <aside class="panel panel-side">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Evaluate</p>
+                        <h2>Rule Tester</h2>
+                    </div>
+                </div>
+                <p id="testerActiveRule" class="eyebrow">Load a rule from the Library to test it.</p>
+                <div id="testerForm" class="field-grid"></div>
+                <button type="button" id="evaluateBtn" class="btn btn-primary btn-full" style="margin-top:12px;">Evaluate</button>
+                <div id="testerResult" style="margin-top:12px;"></div>
+            </aside>
+        </main>
     </div>
 
     <script type="module" src="../js/builder.js"></script>
+    <script type="module" src="../js/library.js"></script>
+    <script type="module" src="../js/tester.js"></script>
 </body>
 </html>
