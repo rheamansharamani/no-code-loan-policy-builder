@@ -55,3 +55,7 @@ export function getStoredAuthSession() {
 export function clearAuthSession() {
   localStorage.removeItem(authStorageKey);
 }
+
+export function clearStoredAuthSession() {
+  localStorage.removeItem(authStorageKey);
+}

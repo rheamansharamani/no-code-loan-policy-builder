@@ -10,7 +10,7 @@ import "./Login.css";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("user");
+  const [role, setRole] = useState("admin");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -37,12 +37,15 @@ export default function Login() {
     }
 
     saveAuthSession(user);
-    navigate(user.role === "admin" ? "/admin/dashboard" : "/user/dashboard");
+
+    const targetPath =
+      user.role === "admin" ? "/admin/dashboard" : "/user/dashboard";
+
+    navigate(targetPath, { replace: true });
   };
 
   return (
     <div className="login-page">
-      {/* Left Section */}
       <div className="login-left">
         <div className="overlay">
           <h1>Smart Loan Rule Engine</h1>
@@ -60,11 +63,9 @@ export default function Login() {
         </div>
       </div>
 
-      {/* Right Section */}
       <div className="login-right">
         <form className="login-card" onSubmit={handleLogin}>
           <h2>Welcome Back</h2>
-
           <p>Please login to continue</p>
 
           <input

@@ -1,367 +1,77 @@
-# no-code-loan-policy-builder
+# No-Code Loan Policy Builder
 
-### AI-Powered Business Rule Engine for Lending Institutions
+AI-powered Business Rule Engine for configurable loan eligibility rules.
 
-> **Build, Manage, Test, and Deploy Lending Rules without Writing Code.**
+This repository contains two main parts:
 
-RuleForge AI is a configurable Business Rule Management System (BRMS) designed for banks and financial institutions. It enables business users to create and modify loan eligibility policies through an intuitive visual interface or natural language using AI, eliminating the need for developer intervention.
+- Backend (Express): provides an AI rule-generation endpoint and serves static assets. (port 3000)
+- Frontend (React + Vite): the rule-builder UI and applicant flows. (port 5173)
 
----
+Quick Start
+-----------
+1. Install dependencies (run once):
 
-# 🚀 Problem Statement
-
-Financial institutions frequently launch new loan products and revise lending policies.
-
-Traditional systems require developers to modify backend code whenever business rules change.
-
-Example:
-
-```java
-if(age >= 21 && income >= 500000 && cibil >= 750)
+```bash
+# From repository root
+npm install
+cd rule-engine-ui
+npm install
 ```
 
-If the business decides that the minimum income should be ₹4,00,000 instead of ₹5,00,000, the application must be modified, tested, and redeployed.
+2. Start the backend server (project root):
 
-This dependency slows down policy updates and increases operational costs.
-
----
-
-# 💡 Our Solution
-
-RuleForge AI separates **business rules** from **application code**.
-
-Business managers can:
-
-- Create Loan Products
-- Define Eligibility Rules Visually
-- Generate Rules using AI
-- Test Customer Eligibility
-- View Rule History
-- Rollback Previous Versions
-- Track Audit Logs
-
-No coding required.
-
----
-
-# ✨ Features
-
-## 📊 Dashboard
-
-- Total Loan Products
-- Active Rules
-- Rules Updated Today
-- Applications Processed
-- Approval Rate
-- Recent Activity
-
----
-
-## 🏦 Loan Product Management
-
-Supports multiple configurable loan products.
-
-Example
-
-- Home Loan
-- Car Loan
-- Education Loan
-- Gold Loan
-- Business Loan
-
-Each product maintains its own rule configuration.
-
----
-
-## ⭐ Visual Rule Builder
-
-Business users create rules using an intuitive interface.
-
-Example
-
-```
-Applicant Age >= 23
-
-AND
-
-Monthly Income >= 50000
-
-AND
-
-Employment Type = Salaried
-
-AND
-
-CIBIL Score >= 700
+```bash
+npm start
 ```
 
-No programming knowledge required.
+This starts the Express server on port `3000` and exposes the AI route at `/api/ai/generate`.
 
----
+3. Start the frontend dev server (in a new terminal):
 
-## 🤖 AI Rule Generator
-
-Users simply describe the policy in plain English.
-
-Example
-
-```
-Create a Home Loan for salaried employees above age 23
-with income above 4 lakh and CIBIL above 700.
+```bash
+cd rule-engine-ui
+npm run dev
 ```
 
-AI converts it into structured business rules automatically.
-
----
-
-## 📚 Rule Library
-
-Manage every business rule.
-
-- Create
-- Edit
-- Delete
-- Disable
-- Search
-- Filter
-
----
-
-## 🧪 Rule Tester
-
-Evaluate customer eligibility instantly.
-
-Input
-
-```
-Age : 25
-
-Income : 600000
-
-Employment : Salaried
-
-CIBIL : 780
-```
-
-Output
-
-```
-Eligible ✅
-```
-
-or
-
-```
-Rejected ❌
-
-Reason:
-
-Income should be greater than ₹500000.
-```
-
----
-
-## 📜 Rule Version History
-
-Every modification creates a new version.
-
-```
-Version 1
-
-Income >= 500000
-
-------------------
-
-Version 2
-
-Income >= 400000
-```
-
-Supports rollback.
-
----
-
-## 📝 Audit Logs
-
-Every action is recorded.
-
-```
-Rahul
-
-Created Home Loan Rule
-
-10:25 AM
-
-----------------
-
-Priya
-
-Updated Gold Loan Rule
-
-Yesterday
-```
-
----
-
-# 🧠 AI-Powered Features
-
-- Natural Language → Rule Conversion
-- Explainable Decisions
-- Configurable Metadata
-- Zero Developer Dependency
-- Rule Validation
-- AI-Assisted Policy Creation
-
----
-
-# 🏗️ System Architecture
-
-```
-                Business User
-
-                       │
-
-                       ▼
-
-          Visual Rule Builder / AI
-
-                       │
-
-                       ▼
-
-            Business Rule Engine
-
-                       │
-
-          ┌────────────┴─────────────┐
-
-          ▼                          ▼
-
-     Rule Storage             Rule Evaluation
-
-          │                          │
-
-          └────────────┬─────────────┘
-
-                       ▼
-
-              Loan Eligibility Result
-```
-
----
-
-# ⚙️ Technology Stack
-
-## Frontend
-
-- HTML5
-- CSS3
-- Vanilla JavaScript (ES Modules)
-
-## Backend
-
-- Node.js
-- Express.js
-
-## Database
-
-- SQLite
-
-## AI
-
-- Groq API
-- Llama 3.3 70B
-
----
-
-# 📂 Project Structure
-
-```
-ruleforge-ai/
-
-│
-
-├── public/
-
-│   ├── css/
-
-│   ├── js/
-
-│   └── pages/
-
-│
-
-├── routes/
-
-├── services/
-
-├── database/
-
-├── utils/
-
-├── server.js
-
-└── README.md
-```
-
----
-
-# 🎯 Business Benefits
-
-✅ No Developer Dependency
-
-Business teams can modify lending policies without waiting for engineering.
-
----
-
-✅ Faster Policy Deployment
-
-New rules can be published instantly.
-
----
-
-✅ Improved Transparency
-
-Every approval and rejection is explainable.
-
----
-
-✅ Reduced Operational Cost
-
-Business rules become configurable instead of hardcoded.
-
----
-
-✅ Enterprise Ready
-
-Supports versioning, auditing, and future scalability.
-
----
-
-# 📈 Future Enhancements
-
-- AI Conflict Detection
-- Rule Simulator
-- Bulk Customer Testing
-- Rule Analytics Dashboard
-- Policy Comparison
-- Multi-Level Approval Workflow
-- User Authentication
-- Role-Based Access Control
-- Export Rules to JSON/PDF
-- Integration with Core Banking Systems
-
----
-
-
-# 🏆 USP
-
-Unlike traditional rule management systems, RuleForge AI enables business users to generate lending rules directly from natural language while maintaining explainability, version control, and enterprise-grade configurability.
-
----
-
-# 📄 License
-
-Developed as part of a Hackathon Project.
-
-For educational and demonstration purposes.
+This starts Vite on port `5173`. Vite is configured to proxy `/api` → `http://localhost:3000` so the AI endpoint is reachable from the UI.
+
+Mock accounts (for local development)
+------------------------------------
+- Administrator: `admin@example.com` / `admin123`
+- Loan Applicant: `user@example.com` / `user123`
+
+Where to look / edit
+--------------------
+- Frontend entry: `rule-engine-ui/src/main.jsx` and `rule-engine-ui/src/App.jsx`.
+- Routes and protected routes: `rule-engine-ui/src/routes/AppRoutes.jsx`.
+- Admin Rule Builder page: `rule-engine-ui/src/pages/admin/Rules.jsx` (product selector, manual/AI toggle lives here).
+- Loan product configuration (product-specific fields): `rule-engine-ui/src/config/loanConfig.js`.
+- AI client used by the frontend: `rule-engine-ui/src/services/aiApi.js` (POSTs to `/api/ai/generate`).
+- Frontend auth/session helpers: `rule-engine-ui/src/services/api.js`.
+- Backend AI router: `routes/ai.js` and generator logic in `services/aiGenerator.js`.
+- Static builder preview (served by backend): `public/pages/builder.html` (optional).
+
+What I changed (local edits)
+----------------------------
+- UI: `Rules.jsx` now has a Product selector and Manual / AI mode toggle. Manual entry shows product-specific fields. AI Builder uses the selected product and calls the backend.
+- Dev server proxy: `rule-engine-ui/vite.config.js` now proxies `/api` to `http://localhost:3000`.
+- Logout: navbar and sidebar were updated so both admin and user can log out correctly (auth key is `ruleEngineAuth`).
+
+Troubleshooting
+---------------
+- If the AI panel says "Backend did not return valid JSON", ensure the backend is running (`npm start`) and reachable on port `3000`.
+- If changes in frontend components seem stale, stop and restart `npm run dev` to clear Vite's module cache.
+
+Next steps you might want
+------------------------
+- Persist rules to the backend (API + DB) instead of keeping them in memory.
+- Add server-side authentication and secure the AI endpoint.
+- Add nicer styling to the Manual/AI mode toggle in `rule-engine-ui/src/pages/admin/Admin.css`.
+
+Contributing
+------------
+Send PRs against the `main` branch. Keep changes scoped and include a short description of intent.
+
+License
+-------
+MIT (adjust as needed)

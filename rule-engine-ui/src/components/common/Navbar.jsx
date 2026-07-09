@@ -1,7 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { clearStoredAuthSession } from "../../services/api";
 import "./Common.css";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    clearStoredAuthSession();
+    navigate('/', { replace: true });
+  };
+
   return (
     <nav className="navbar">
 
@@ -20,6 +29,8 @@ export default function Navbar() {
         <Link to="/user/dashboard">
           Apply Loan
         </Link>
+
+        <button className="nav-logout" onClick={handleLogout}>Logout</button>
 
       </div>
 
