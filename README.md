@@ -74,4 +74,4 @@ Send PRs against the `main` branch. Keep changes scoped and include a short desc
 
 License
 -------
-MIT (adjust as needed)
+MIT
